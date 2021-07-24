@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% block body %}
+<form action="" method="post">
+    <p>
+        <label>
+            Category Name
+        </label>
+        <input type="text" name="name" value="{{category.name}}"/>
+    </p>
+    <p>
+        <label>
+            Description
+        </label>
+        <textarea name="description" rows="10"  cols="40">{{category.description}}</textarea>
+    </p>
+    <p>
+        <input type="submit" value="Update Category"/>
+        <a href="/categories/{{category.id}}/delete"><button type="button">Delete Category</button></a>
+        {% csrf_token%}
+    </p>
+
+</form>
+{% endblock %}

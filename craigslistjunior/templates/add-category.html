@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% block body %}
+<form action="" method="post">
+    <p>
+        <label>
+            Category Name
+        </label>
+        <input type="text" name="name"/>
+    </p>
+    <p>
+        <label>
+            Description
+        </label>
+        <textarea name="description"></textarea>
+    </p>
+    <p>
+        <input type="submit" value="Add Category"/>
+        {% csrf_token%}
+    </p>
+
+</form>
+{% endblock %}

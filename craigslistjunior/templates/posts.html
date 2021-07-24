@@ -1,0 +1,12 @@
+<h1>{{category.name}}</h1>
+<p>{{category.description}}</p>
+<a href="/categories"><button>Go Back</button></a>
+<h2>Related Posts</h2>
+<ul>
+    {% for post in posts%}
+    <li><a href="/categories/{{category.id}}/posts/{{post.id}}">{{post.title}}</a>
+    <p>{{post.short_description}}</p>
+    <a href="/categories/{{category.id}}/posts/{{post.id}}/edit"><button>Edit Post</button></a>
+    </li>
+    {% endfor %}
+</ul>

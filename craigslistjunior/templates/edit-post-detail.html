@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+{% block body %}
+<h1>Update post for {{category.name}}</h1>
+<form action="" method="post">
+    <p>
+        <label>
+            Title
+        </label>
+        <br/>
+        <input type="text" name="title" value="{{post.title}}"/>
+    </p>
+    <p>
+        <label>
+            Short Description
+        </label> <br/>
+
+        <textarea name="description" rows="5" cols="25">{{post.short_description}}</textarea>
+    </p>
+    <p>
+        <label>
+            Content
+        </label> <br/>
+
+        <textarea name="content" rows="10" cols="25">{{post.content}}</textarea>
+    </p>
+    <p>
+        <input type="submit" value="Update  Post"/>
+        <a href="/categories/{{category.id}}/posts/{{post.id}}/delete"><button type="button">Delete Post</button></a>
+        {% csrf_token%}
+    </p>
+
+</form>
+{% endblock %}
